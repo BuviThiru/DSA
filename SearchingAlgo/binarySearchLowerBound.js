@@ -32,6 +32,6 @@ function binarySearchLowerBound(arr, x) {
     }
     return ans
 }
-console.log(binarySearchLowerBound([1, 2, 3, 4, 5, 10, 10, 10, 10, 11, 15, 16], 10))
+console.log(binarySearchLowerBound([1, 2, 3, 4, 4, 10, 10, 10, 10, 11, 15, 16], 10))
 
 

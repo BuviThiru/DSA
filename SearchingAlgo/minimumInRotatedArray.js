@@ -2,13 +2,13 @@
 
 
 function findMinimumInRotatedArray(arr,start,end){
- console.log(n)
+
 while(start<=end){ 
     let mid = parseInt(start +((end-start)/2))
     let next = (mid+1)%n
     let prev = (mid-1 +n)%n
     if(arr[prev]>arr[mid]&& arr[next]>arr[mid]){
-        return mid}
+        return mid} //index of minimum number is the number of times it rotated
     if(arr[mid]<=arr[end]){//if mid less than end, search the left part
         end = mid-1
     }
