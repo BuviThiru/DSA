@@ -1,34 +1,35 @@
 function isAllocationPossible(bookarray,n,numOfStu,value){
   let student = 1; let pages =0
-  for(let i=0;i<n;i++){
+  for(let i=0;i<=n;i++){
     if(bookarray[i]>value) return false
-    if(pages+bookarray[i]<=value){
-        pages = pages+bookarray[i]
+    if(pages+bookarray[i]>value){
+      student++
+       pages = bookarray[i]
+      
     }
     else{
-         student++
-        //  pages = 0
-         pages +=bookarray[i]
+      pages = pages+bookarray[i]
     }
   }
-  console.log(">>>>>>>>>>>>",value,student,pages)
-  if(student==numOfStu) return true
-  else return false
+  if(student>numOfStu) return false
+else return true
 }
 
 
 function minimumNumOfMaximumPages(bookarray,n,numOfStu){
-  bookarray.sort((a,b)=>a-b)
-  let minValue = bookarray[0]//act as start
+ 
+  let minValue = Math.min(...bookarray)
+  // console.log(minValue)
   let maxValue = 0
-  for(let i=0;i<n;i++){
+  for(let i=0;i<=n;i++){
     maxValue = maxValue+bookarray[i]
   }
+  // console.log(maxValue)
   let ans =0
  while(minValue<=maxValue){
 let mid= parseInt(( minValue+maxValue)/2)
  let isAllocated =  isAllocationPossible(bookarray,n,numOfStu,mid) 
- console.log(mid,isAllocated)
+//  console.log(mid,isAllocated)
  if(isAllocated){
     ans = mid
     maxValue = mid-1
@@ -38,6 +39,6 @@ let mid= parseInt(( minValue+maxValue)/2)
  }
  return ans
 }
-let bookarray =[10,20,30,40]
+let bookarray =[12,12,13,14]
 let n = bookarray.length-1
 console.log(minimumNumOfMaximumPages(bookarray,n,2))
