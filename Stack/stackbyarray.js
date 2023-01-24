@@ -1,5 +1,5 @@
 class Stack {
-    constructor(size = 3) {
+    constructor(size = 5) {
         this.data = [];
         this.top = -1 //we will increase the first index to zero when we add element to stack
         this.maxSize = size; //only till this size we will add data
@@ -38,6 +38,31 @@ class Stack {
         this.top--
     }
 
+    insertElementAtBottom(value){
+        if(this.stackUnderflow()){
+            this.push(value);
+            return
+        }
+
+        let topelement = this.getTop()
+        this.pop();
+        this.insertElementAtBottom(value)
+        this.push(topelement)
+    }
+
+    reverse(){
+        if(!this.stackUnderflow()){
+            let topelement = this.getTop();
+            this.pop()
+            this.reverse()
+            this.insertElementAtBottom(topelement)
+        }
+    }
+
+    printStack(){
+        console.log(this.data)
+    }
+
 }
 
 
@@ -49,5 +74,10 @@ myStack.push(20)
 console.log(myStack.getTop())
 myStack.push(30)
 console.log(myStack.getTop())
-myStack.pop()
-console.log(myStack.getTop())
+// myStack.pop()
+// console.log(myStack.getTop())
+myStack.printStack()
+myStack.insertElementAtBottom(400)
+myStack.printStack()
+myStack.reverse()
+myStack.printStack()
