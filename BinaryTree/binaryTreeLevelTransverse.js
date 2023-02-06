@@ -50,30 +50,39 @@ class Queue{
     }
 }
 
+class Node{
+    constructor(val){
+        this.data = val;
+        this.left = null;
+        this.right = null;
 
+    }
+} 
 
+let newTree =new Node(10)
+newTree.left = new Node(20)
+newTree.right = new Node (30)
+newTree.left.right = new Node(40)
+newTree.left.left = new Node(100)
+// console.log(newTree)
 
-let myqueue = new Queue(5)
-console.log(myqueue.isEmpty())
-myqueue.enqueue(10)
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
-myqueue.size()
-myqueue.enqueue(20)
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
-myqueue.enqueue(30)
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
-myqueue.enqueue(40)
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
-myqueue.dequeue()
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
-myqueue.dequeue()
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
-myqueue.dequeue()
-console.log(myqueue.size())
-console.log("Front",myqueue.getFront())
+function levelOrderTransverse(node){
+    let q = new Queue();
+    q.enqueue(node);
+    q.enqueue("/")
+    while(!q.isEmpty()){
+        let frontNode = q.getFront()
+        q.dequeue()
+        if(frontNode == "/" && !q.isEmpty()){
+            console.log("-----")
+            q.enqueue('/') 
+        }
+        else{
+            console.log(frontNode.data)
+            frontNode.left != null && q.enqueue(frontNode.left)
+            frontNode.right != null && q.enqueue(frontNode.right) 
+        }
+    }
+
+}
+levelOrderTransverse(newTree)
