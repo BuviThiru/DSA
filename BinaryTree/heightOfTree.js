@@ -20,7 +20,7 @@ function heightOfTree(node){
 
     let leftHeight = heightOfTree(node.left)
     let rightHeight = heightOfTree(node.right)
-    let height = 1+ Math.max(leftHeight,rightHeight)
+    let height = 1+ Math.max(leftHeight,rightHeight) //height should take the maximum path..so max is taken into account
      return height
 }
 console.log(heightOfTree(newTree))
