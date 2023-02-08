@@ -1,5 +1,5 @@
 class Node{
-    constructor(val){levelOrderTransverse
+    constructor(val){
         this.data = val;
         this.left = null;
         this.right = null;
@@ -27,7 +27,7 @@ function preOrderTransversal(node){ //newtree is received as node --preorder nod
 
 }
 preOrderTransversal(newTree)
-console.log("____________________________________________________")
+console.log("________________INORDER____________________________________")
 
 
 function inOrderTransversal(node){ //newtree is received as node --inorder left,node, right
