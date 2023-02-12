@@ -27,11 +27,9 @@ let inOrder = [8, 4, 10, 9, 11, 2, 5, 1, 6, 3, 7]  //left ,node, right....gives 
 let constructedTree = constructBT(preOrder, inOrder)
 
 function preOrderTransversal(node) { //newtree is received as node --preorder node,left,right
-    if (node == null) {
-        //    console.log(null) ;
+    if (node == null) {   
         return
-    }
-    // console.log("hai")
+    } 
     console.log(node.data)
     preOrderTransversal(node.left)
     preOrderTransversal(node.right)
