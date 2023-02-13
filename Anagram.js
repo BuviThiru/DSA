@@ -1,20 +1,20 @@
-// function anagram(array){
+function anagram(array){
    
-//     let obj = {};
-//     for(let i=0;i<array.length;i++){
-//         let str = array[i].split("").sort().join("")
-//         if(!obj[str]){
-//             obj[str] =  [array[i]] 
-//         }
-//         else{
-//             obj[str].push(array[i]) 
-//         }
-//     }
-   
-//   let result = Object.values(obj)  
-//   return result;
-// }
-// console.log(anagram(["bat","ate","eat","tea","number","bernum","tee"]))
+    let obj = {};
+    for(let i=0;i<array.length;i++){
+        let str = array[i].split("").sort().join("")
+        if(!obj[str]){
+            obj[str] =  [array[i]] 
+        }
+        else{
+            obj[str].push(array[i]) 
+        }
+    }
+   console.log(obj)
+  let result = Object.values(obj)  
+  return result;
+}
+console.log(anagram(["bat","ate","eat","tea","number","bernum","tee"]))
 
 
 // function frequencyOfChar(string,char){
