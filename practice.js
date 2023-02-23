@@ -22,6 +22,14 @@
 
 // console.log(PalinArray([111,122,555]))
 
-let x ="4"
-let y = +x;
-console.log(typeof y)
+// let x ="4"
+// let y = +x;
+// console.log(typeof y)
+
+const a = [1, 2, 3];
+const b = [1, 2, 3];
+
+console.log(a == b);
+console.log(a === b);
+
+console.log([0] == 0)

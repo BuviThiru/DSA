@@ -1,16 +1,16 @@
 //for perfect squares
-function squareRoot(num){
+// function squareRoot(num){
 
-    let start = 0;
-    let end = num;
-    while(start<=end){
-        let mid = parseInt((start +end)/2)
-        if(mid*mid == num) return mid
-        else if(mid*mid>num) end = mid
-        else start =mid
-    }
-}
-console.log(squareRoot(16))
+//     let start = 0;
+//     let end = num;
+//     while(start<=end){
+//         let mid = parseInt((start +end)/2)
+//         if(mid*mid == num) return mid
+//         else if(mid*mid>num) end = mid
+//         else start =mid
+//     }
+// }
+// console.log(squareRoot(16))
 
 //for all numbers
 
@@ -29,7 +29,7 @@ console.log(squareRoot(16))
 // }
 // console.log(squareRootOfAnyNum(20))
 
-//answer with precision
+// answer with precision
 function squareRootOfAnyNum(number,precision){
     let start =0;
     end = number;
