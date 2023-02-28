@@ -33,7 +33,7 @@ while(minimumSum<=maximumSum){
     else {
         minimumSum = mid+1
     }
-    // console.log(mid,isMinSum)
+  
 }
 return ans
 }
