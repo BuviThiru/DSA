@@ -39,31 +39,50 @@ class SinglyLinkedList{
     }
 
     deleteAtHead(){
-        this.head = this.head.next
+        if(!this.head){
+            console.log("No element is present in the linked list")
+        }
+        current = this.head;
+        this.head = this.head.next;
+        current = null;
+        this.length--
     }
 
     deleteAtTail(){
-        let prevNode ;
+        if(this.head || !this.head.next){
+            this.deleteAtHead();
+            return;
+        }     
         let current = this.head
-        while(current.next!=null){
-            prevNode = current
-            current = current.next
-           
+        while(current.next.next){
+            current = current.next;        
         }
-        current = prevNode
         current.next = null
         this.length--
     }
+
     deleteAtPosition(position){
-        let count =0
-        let current =this.head
-        let prev;
-        while(count<position){
-             prev = current
-             current = current.next
-            count++
-        }
-       prev.next =current.next 
+      if(position<0 || position>this.length){ //for invalid positions
+          console.log("Position is invalid");
+          return;
+      }
+      if(position == 1){
+        this.deleteAtHead();
+        return;
+      }
+      if(position ==this.length){
+        this.deleteAtTail();
+          return      }
+          let count = 1;
+          let current = this.head;
+          while(count<position-1){
+            count++;
+            current = current.next;
+          }
+          let nodeToBeDeleted = current.next;
+          current.next = current.next.next;
+          nodeToBeDeleted = null;
+          this.length--
 
     }
 

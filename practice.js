@@ -51,3 +51,7 @@ function findQuantity(id,arr){
 
      
 }
+
+
+let array = new Array()
+console.log("Array length",array.length)
